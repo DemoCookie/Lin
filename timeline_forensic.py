@@ -170,12 +170,19 @@ def build_figure(df):
         tickformat="%H:%M",
         rangeslider=dict(visible=True),
     )
+    
     fig.update_layout(
-        title="Timeline forensique — activité par catégorie",
+        title=dict(
+            text="Timeline forensique — activité par catégorie",
+            subtitle=dict(
+                text='© 2026 <a href="https://www.tiktok.com/@panopee" target="_blank" style="color: #0366d6;">@Panopée</a> | <a href="https://github.com/DemoCookie" target="_blank" style="color: #0366d6;">DemoCookie</a> — Licence <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" style="color: #0366d6;">CC BY-NC 4.0</a> (Usage non commercial)',
+                font=dict(size=12, color="gray"),
+            ),
+        ),
         hovermode="closest",
         height=650,
         legend_title="Groupe",
-        margin=dict(l=220, r=40, t=60, b=40),
+        margin=dict(l=220, r=40, t=80, b=40),  # t=80 laisse de la place pour le sous-titre
         plot_bgcolor="white",
     )
     return fig
